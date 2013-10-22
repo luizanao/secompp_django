@@ -1,0 +1,71 @@
+// Profile
+.profile-header{
+    padding: 10px;
+    border: solid 1px darken($basic-color, 10%);
+    border-radius: 6px;
+}
+
+.profile-photo{
+    width: 160px;
+    height: 160px;
+    border-radius: 6px;
+    background: url(/img/profile.jpg) no-repeat;
+}
+
+.profile-info h1{
+    font-size: 1.6em;
+}
+
+.profile-info ul{
+    line-height: 1.5;
+    font-size: .75em;
+}
+
+.profile-data{
+    margin-top: -30px;
+}
+
+.profile-data h1{
+    color: $header-color;
+}
+
+.material{
+    height: 90px;
+    border-bottom: solid 1px darken($basic-color, 10%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,1);
+    margin: 0 0 0 -15px;
+    padding: 10px;
+}
+
+.material a{
+    font-size: 1.2em;
+    color: $link-color;
+}
+.material div, .material ul{
+    float: left;
+}
+
+// Icons
+[class*="iconfile-"] {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-image: url(/img/icons.svg);
+    background-repeat: no-repeat;
+}
+.iconfile-pdf {
+    background-position: 0 0;
+    width: 32px;
+}
+.iconfile-word {
+    background-position: -48px 0;
+    width: 32px;
+}
+.iconfile-excel {
+    background-position: -96px 0;
+    width: 32px;
+}
+.iconfile-powerpoint {
+    background-position: -144px 0;
+    width: 32px;
+}
