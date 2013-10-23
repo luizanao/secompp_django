@@ -12,17 +12,17 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'app_principal.views.home', name='index'),
 
-<<<<<<< HEAD
+
     #(r'^avisos/$', 'app_principal.views.aviso'),
     #(r'^avisos/(?P<slug>.*)/$', 'app_principal.views.aviso_slug'),
     
 
     
-=======
+
     url(r'^contato/', 'app_principal.views.contato', name='contato'),
     url(r'^obrigado/', 'app_principal.views.obrigado', name='obrigado'),
 
->>>>>>> d244d51c5a7c9edf872a8425deb08d90868cc7de
+
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
