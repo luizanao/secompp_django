@@ -43,17 +43,44 @@ class Professor(models.Model):
 	c_lattes = models.URLField(u"URL do Curriculum Lattes", help_text='ex:http://buscatextual.cnpq.br/buscatextual/visualizacv.jsp?id=XXXXXX')
 	disciplinas = models.ManyToManyField(Disciplina,related_name='professor_disciplinas',help_text='Disciplinas que o professor irá ministrar')
 	descricao = models.TextField(u"Descrição do Professor")
+	slug = models.SlugField(unique=True, max_length=100, editable=False,default="")
+
 
 	avatar = models.ImageField(u"Imagem do Professor", upload_to='uploads/professor/avatar/')
+
+	def save(self):
+		self.slug = slugify(self.descricao)
+		super(Professor, self).save()
+
+
 	class Meta:
 		verbose_name = u"Professor"
 		verbose_name_plural = u"Professores"
+
+	@property
+	def primeiro_paragrafo(self):
+		"""Retorna um texto curto sobre a descrição"""
+		count = 0
+		palavras =''
+		for word in self.descricao.split(' '):
+			if count < 10:
+				palavras = palavras +" "+word
+				count+=1
+
+		return palavras 
+
+class MaterialApoio(models.Model):
+	data = models.DateField(default = datetime.datetime.now,editable=False)
+	descricao = models.TextField(u"Descrição",blank=False,null=True)
+	tags = models.ManyToManyField(Disciplina,related_name='disciplina_material', help_text='Disciplinas Relacionadas')
+	arquivo = models.FileField(u"Arquivo", upload_to="uploads/arquivos/") 
 
 class Aluno(models.Model):
 	user=models.ForeignKey(User,blank=False, null=True,editable=False)
 	nome = models.CharField(u"Nome do Aluno", max_length=200, null=False, blank=False)
 	curso = models.CharField(u"Curso", choices=CURSOS_CHOICE, max_length=100)
 	disciplinas = models.ManyToManyField(Disciplina, related_name='aluno_disciplinas',help_text='Disciplinas que o aluno irá estudar')
+	
 
 	avatar = models.ImageField(u"Imagem do Aluno", upload_to='uploads/alunos/avatar/',blank=True, null=True)
 
