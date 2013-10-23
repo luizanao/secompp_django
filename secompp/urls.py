@@ -13,6 +13,9 @@ urlpatterns = patterns('',
     url(r'^$', 'app_principal.views.home', name='index'),
     # url(r'^secompp/', include('secompp.foo.urls')),
 
+    url(r'^contato/', 'app_principal.views.contato', name='contato'),
+    url(r'^obrigado/', 'app_principal.views.obrigado', name='obrigado'),
+
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
