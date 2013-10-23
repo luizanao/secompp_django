@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Lorem Title</title>
+        <title>Secompp 2013</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         
@@ -37,7 +37,7 @@
             </div>
           </div>
         </div>
-        {% if professor %}
+        
         <div class="jumbotron">
             <div class="main container">
                 <div class="profile-header">
@@ -48,7 +48,6 @@
                             </div>
                         </div>
                         <div class="profile-info col-lg-8">
-                            
                             <h1 class="prof-title">{{professor.nome}}</h1>
                             <ul>
                                 <li>{{professor.universidade}} - {{professor.depto}}</li>
@@ -62,9 +61,7 @@
         </div>
 
         {% block content %}{% endblock content %}
-        {% else %}
-            <p>Nenhum Professor Foi cadastrado. Sr. Professor, comece já! <a href="/admin/"></a></p>
-        {% endif %}
+        
         <div class="container">
           <hr>
           <footer>

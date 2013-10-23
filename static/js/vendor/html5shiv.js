@@ -1,0 +1,1 @@
+/Users/luizfelipe/Desktop/secompp/secompp_django/templates/js/vendor/html5shiv.js

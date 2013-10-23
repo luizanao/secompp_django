@@ -64,8 +64,7 @@ ul {
   width: 160px;
   height: 160px;
   border-radius: 6px;
-  background: url(/img/profile.jpg) no-repeat;
-}
+ }
 
 /* line 15, ../sass/profile.scss */
 .profile-info h1 {
@@ -113,7 +112,7 @@ ul {
   display: inline-block;
   width: 32px;
   height: 32px;
-  background-image: url(/img/icons.svg);
+  background-image: url('../img/icons.svg');
   background-repeat: no-repeat;
 }
 

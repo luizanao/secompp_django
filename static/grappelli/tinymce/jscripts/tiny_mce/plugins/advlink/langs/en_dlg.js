@@ -1,0 +1,1 @@
+/Users/luizfelipe/.virtualenvs/secomppEnv/lib/python2.7/site-packages/grappelli/static/grappelli/tinymce/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js

@@ -4,56 +4,39 @@
             <div class="row">
                 <div class="col-lg-6">
                     <h1>Materiais de Apoio</h1>
-                    <ul>
-                        <li class="material">
-                            <div class="iconfile-pdf"></div>
-                            <ul>
-                                <li><a href="#" target="_blank" class="file-title">PDF File</a></li>
-                                <li>Description: Lorem ipsum dolor sit amet.</li>
-                                <li>Date: 11/11/2013</li>
-                            </ul>
-                        </li>
-                        <li class="material">
-                            <div class="iconfile-word"></div>
-                            <ul>
-                                <li><a href="#" target="_blank" class="file-title">Word File</a></li>
-                                <li>Description: Lorem ipsum dolor sit amet.</li>
-                                <li>Date: 11/11/2013</li>
-                            </ul>
-                        </li>
-                        <li class="material">
-                            <div class="iconfile-excel"></div>
-                            <ul>
-                                <li><a href="#" target="_blank" class="file-title">Excel File</a></li>
-                                <li>Description: Lorem ipsum dolor sit amet.</li>
-                                <li>Date: 11/11/2013</li>
-                            </ul>
-                        </li>
-                        <li class="material">
-                            <div class="iconfile-powerpoint"></div>
-                            <ul>
-                                <li><a href="#" target="_blank" class="file-title">PowerPoint File</a></li>
-                                <li>Description: Lorem ipsum dolor sit amet.</li>
-                                <li>Date: 11/11/2013</li>
-                            </ul>
-                        </li>
-                    </ul>
+                    {% if materiais %}
+                        {% for material in materiais  %}
+                        <ul>
+                            <li class="material">
+                                <div class="iconfile-pdf"></div>
+                                <ul>
+                                    <li><a href="/media/{{material.arquivo}}" target="_blank" class="file-title">{{material.filename}}</a></li>
+                                    <li>{{material.descricao|truncatewords:"10"}} </li>
+                                    <li>Data: {{material.data}}</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    {% endfor %}
+                     {% else %}
+                        <p>O {{professor.nome}} ainda não postou nenhum material! Que tal conferir <a href="/materiais/">alguns outros</a>?</p>
+                    {% endif %}
                 </div>
                 <div class="col-lg-6">
                     <h1>Provas e Trabalhos</h1>
                     <ul>
                         <li>√ 30/10/2013 - Physics 2</li>
-                        <li>√ 30/10/2013 - Electromagnetism</li>
-                        <li>√ 04/11/2013 - Physics 1</li>
-                        <li>√ 05/11/2013 - Quantum Physics</li>
-                        <li>√ 11/11/2013 - Astrophysics</li>
+                        
                     </ul>
                     <h1>Avisos</h1>
-                    <ul>
-                        <li>√ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, est sapiente quisquam accusamus non nemo voluptatum. Doloribus, quae rerum quisquam obcaecati laborum dolore soluta fuga eum laboriosam magnam voluptates autem?</li>
-                        <li>√ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem</li>
-                        <li>√ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem</li>
-                    </ul>
+                    {% if avisos %}
+                            <ul>
+                            {% for av in avisos %}
+                                <li>{{av.descricao|truncatewords:"10"}} </li>
+                            {% endfor %}
+                            </ul>
+                    {% else %}
+                        <p>Sem avisos para o momento.</p>
+                    {% endif %}
                 </div>
             </div>
         </div>

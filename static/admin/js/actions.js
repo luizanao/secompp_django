@@ -1,0 +1,1 @@
+/Users/luizfelipe/.virtualenvs/secomppEnv/lib/python2.7/site-packages/grappelli/static/admin/js/actions.js
