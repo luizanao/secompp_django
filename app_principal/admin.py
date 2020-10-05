@@ -1,4 +1,4 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 from app_principal.models import *
 from django.contrib import admin
 
@@ -11,4 +11,3 @@ admin.site.register(Aluno)
 admin.site.register(Projeto)
 admin.site.register(Aviso)
 admin.site.register(Disciplina)
-

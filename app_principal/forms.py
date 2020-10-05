@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
 
-"""
-Forms
---------------------------------------------------
-Dsc:
---------------------------------------------------
-"""
-
 ## Default
 from django import forms
 
@@ -15,8 +8,9 @@ from app_principal.models import MaterialApoio
 
 
 class MaterialApoioForm(forms.ModelForm):
-	class Meta:
-		model = MaterialApoio
+    class Meta:
+        model = MaterialApoio
+
 
 class ContatoForm(forms.Form):
     assunto = forms.CharField(max_length=100)
